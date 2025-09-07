@@ -1,0 +1,101 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+export default function LandingPage() {
+  return (
+    <div className="font-sans text-gray-800">
+      {/* Header */}
+      <header className="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Nossa Consultoria</h1>
+          <nav className="space-x-4 hidden md:block">
+            <a href="#quem-somos" className="hover:underline">Quem Somos</a>
+            <a href="#portfolio" className="hover:underline">Portfólio</a>
+            <a href="#servicos" className="hover:underline">Treinamentos</a>
+            <a href="#prova-social" className="hover:underline">Depoimentos</a>
+            <a href="#contato" className="hover:underline">Contato</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="pt-24 bg-gray-100 text-center py-20">
+        <h2 className="text-4xl font-bold mb-4">Transformando ideias em resultados</h2>
+        <p className="text-lg mb-6">Consultoria especializada em treinamentos e materiais dinâmicos para sua equipe crescer.</p>
+        <Button>Fale conosco</Button>
+      </section>
+
+      {/* Quem Somos */}
+      <section id="quem-somos" className="py-20 px-4 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-4">Quem Somos</h3>
+          <p className="text-lg">Somos uma consultoria dedicada ao desenvolvimento de pessoas e organizações, oferecendo soluções práticas e personalizadas com foco em resultados.</p>
+        </div>
+      </section>
+
+      {/* Portfólio */}
+      <section id="portfolio" className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10">Portfólio de Produtos</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {["Dinâmica de Integração", "Guia de Liderança", "E-book Comunicação"]
+              .map((title, i) => (
+                <Card key={i}>
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-2">{title}</h4>
+                    <p className="text-sm text-gray-600">Descrição breve do produto com foco nos benefícios para o cliente.</p>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Treinamentos */}
+      <section id="servicos" className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-10">Treinamentos e Consultorias</h3>
+          <p className="mb-6 text-lg">Oferecemos soluções sob medida em formatos presenciais e online.</p>
+          <Button>Solicitar orçamento</Button>
+        </div>
+      </section>
+
+      {/* Prova Social */}
+      <section id="prova-social" className="py-20 px-4 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-10">O que dizem nossos clientes</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {["Muito profissionais!", "Impactaram nosso time!", "Material excelente!"].map((msg, i) => (
+              <Card key={i}>
+                <CardContent className="p-6">
+                  <p className="italic">“{msg}”</p>
+                  <p className="mt-4 font-semibold">Cliente {i + 1}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contato */}
+      <section id="contato" className="py-20 px-4 bg-white">
+        <div className="max-w-md mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-6">Entre em Contato</h3>
+          <form className="space-y-4">
+            <Input placeholder="Nome" />
+            <Input placeholder="E-mail" type="email" />
+            <Input placeholder="Interesse (ex: consultoria)" />
+            <Button type="submit">Enviar</Button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center py-6">
+        <p>&copy; {new Date().getFullYear()} Nossa Consultoria. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+  );
+}

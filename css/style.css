@@ -1,0 +1,365 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap');
+
+/* Variáveis de Cores */
+:root {
+    --primary-color: #007bff; /* Azul vibrante para destaque */
+    --secondary-color: #6c757d; /* Cinza para textos secundários */
+    --background-color: #1a1a2e; /* Fundo escuro, "tema noturno" */
+    --card-background: #1f4287; /* Azul mais escuro para cards/seções */
+    --text-color: #e0e0e0; /* Texto claro para contraste */
+    --heading-color: #00f0f0; /* Azul ciano para títulos, um toque "tech" */
+    --border-color: #00f0f0; /* Cor da borda e linhas divisórias */
+    --link-hover-color: #00f0f0; /* Cor do link ao passar o mouse */
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Linhas divisórias */
+hr {
+    border: none;
+    border-top: 1px dashed var(--border-color);
+    margin: 40px 0;
+    width: 80%; /* Para que a linha não vá de ponta a ponta */
+    max-width: 800px;
+}
+
+/* Header */
+header {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid var(--border-color);
+}
+
+header img {
+    border-radius: 0px;
+    width:  300x;
+    height: 300px;
+    object-fit: scale-down;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0, 240, 240, 0.6); /* Efeito de brilho */
+}
+
+header h1 {
+    font-family: 'Share Tech Mono', monospace; /* Fonte com estilo de código */
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-top: 5px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px); /* Efeito sutil de levantar */
+}
+
+/* Seções */
+section {
+    background-color: var(--card-background);
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 900px;
+    border: 1px solid rgba(0, 240, 240, 0.2); /* Borda sutil */
+}
+
+section h2 {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--heading-color);
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Sobre Mim */
+section p strong {
+    color: var(--primary-color);
+}
+
+/* Formação Acadêmica */
+section p.course-info {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Tecnologias & Habilidades */
+.tech-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tech-list li {
+    background-color: var(--background-color);
+    color: var(--heading-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.95em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tech-list li:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transform: translateY(-3px);
+}
+
+/* Projetos */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project {
+    background-color: var(--background-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 240, 240, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 240, 240, 0.3); /* Brilho ao passar o mouse */
+}
+
+.project h3 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.project p {
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+.project a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 18px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px; /* Adicionado para separar os botões do texto */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project a:hover {
+    background-color: var(--link-hover-color);
+    color: var(--background-color);
+    transform: scale(1.05);
+}
+
+/* Em Breve Projeto */
+.project:last-child {
+    text-align: center;
+    border: 1px dashed var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.project:last-child h3 {
+    color: var(--secondary-color);
+}
+
+.project:last-child p {
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* Contato */
+.contact {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.contact p i {
+    margin-right: 8px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    width: 100%;
+    border-top: 1px solid rgba(0, 240, 240, 0.1);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .social-icons a {
+        font-size: 1.5em;
+        margin: 0 10px;
+    }
+
+    section {
+        padding: 30px;
+        margin: 15px auto;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .tech-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-list li {
+        width: 80%;
+        text-align: center;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .tagline {
+        font-size: 0.9em;
+    }
+
+    .social-icons a {
+        font-size: 1.3em;
+        margin: 0 8px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    .project a {
+        padding: 8px 15px;
+        margin-right: 5px;
+    }
+}
